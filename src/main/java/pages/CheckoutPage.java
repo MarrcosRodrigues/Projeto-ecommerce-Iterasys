@@ -9,6 +9,14 @@ public class CheckoutPage {
 	
 	private By totalTaxInclTotal = By.cssSelector("div.cart-total span.value");
 	
+	private By nomeCliente = By.cssSelector("div.address");
+	
+	private By botaoContinueAddress = By.name("confirm-addresses");
+	
+	private By shippingValor = By.cssSelector("span.carrier-price");
+	
+	private By botaContinueShipping = By.name("confirmDeliveryOption");
+	
 	public CheckoutPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -17,4 +25,19 @@ public class CheckoutPage {
 		return driver.findElement(totalTaxInclTotal).getText();
 	}
 	
+	public String obter_nomeCliente() {
+		return driver.findElement(nomeCliente).getText();
+	}
+	
+	public void clicarBotaoContinueAddress() {
+		driver.findElement(botaoContinueAddress).click();
+	}
+	
+	public String obter_shippingValor() {
+		return driver.findElement(shippingValor).getText();
+	}
+	
+	public void clicarBotaoContinueShipping() {
+		driver.findElement(botaContinueShipping).click();
+	}
 }
