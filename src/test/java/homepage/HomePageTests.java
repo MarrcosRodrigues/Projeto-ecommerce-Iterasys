@@ -272,9 +272,15 @@ public class HomePageTests extends BaseTests{
 		//Teste
 		//Clicar no botao para confirmar o pedido
 		pedidoPage = checkoutPage.clicarBotaoConfirmaPedido();
+		
 		//Validar valores da tela
 		assertTrue(pedidoPage.obterTextoPedidoConfirmado().endsWith("YOUR ORDER IS CONFIRMED"));
 //		assertThat(pedidoPage.obterTextoPedidoConfirmado().toUpperCase(), is("YOUR ORDER IS CONFIRMED")); 
+		
+		assertThat(pedidoPage.obterEmail(), is("m4rcostestes@gmail.com"));
+		assertThat(pedidoPage.obterTotalProdutos(), is(esperado_subtotalProduto));
+		assertThat(pedidoPage.obterTotalTaxInc(), is(esperado_totalTaxInclTotal));
+		assertThat(pedidoPage.obterMetodoPagamento(), is("check"));
 	}
 	
 }
