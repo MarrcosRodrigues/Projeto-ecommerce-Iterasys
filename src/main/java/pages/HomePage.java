@@ -25,6 +25,8 @@ public class HomePage {
 	
 	private By usuarioLogado = By.cssSelector("#_desktop_user_info span.hidden-sm-down");
 	
+	private By BotaoSignOut = By.cssSelector("a.logout");
+	
 	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -69,6 +71,10 @@ public class HomePage {
 	
 	public boolean estaLogado(String texto) {
 		return texto.contentEquals(driver.findElement(usuarioLogado).getText());
+	}
+	
+	public void clicarBotaoSignOut() {
+		driver.findElement(BotaoSignOut).click();
 	}
 	
 	

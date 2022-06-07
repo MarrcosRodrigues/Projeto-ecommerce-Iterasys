@@ -5,19 +5,19 @@
   <version>0.0.1-SNAPSHOT</version>
   
   <properties>
-  	<junit.version>4.13.2</junit.version>
+  	<junit.version>5.8.2</junit.version>
   	<hamcrest.version>2.2</hamcrest.version>
   	<selenium.version>4.2.0</selenium.version>
-  	<juniitjupiter>5.8.2</juniitjupiter>
   </properties>
   
   <dependencies>
-  	<!-- https://mvnrepository.com/artifact/junit/junit -->
+  
+	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter -->
 	<dependency>
-	    <groupId>junit</groupId>
-	    <artifactId>junit</artifactId>
-	    <version>${junit.version}</version>
-	    <scope>test</scope>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter</artifactId>
+		<version>${junit.version}</version>
+		<scope>test</scope>
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
@@ -28,21 +28,12 @@
 	    <scope>test</scope>
 	</dependency>
 	
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-java</artifactId>
 	    <version>${selenium.version}</version>
 	</dependency>
-		
-	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-	<dependency>
-	    <groupId>org.junit.jupiter</groupId>
-	    <artifactId>junit-jupiter-api</artifactId>
-	    <version>${juniitjupiter}</version>
-	    <scope>test</scope>
-	</dependency>
-	
 	  
   </dependencies>
   

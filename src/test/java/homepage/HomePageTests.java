@@ -2,11 +2,13 @@ package homepage;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import base.BaseTests;
 import pages.CarrinhoPage;
@@ -73,6 +75,36 @@ public class HomePageTests extends BaseTests{
 		
 		carregarPaginaInicial();
 		
+	}
+	
+	@ParameterizedTest
+	@CsvFileSource(resources = "/massaTest_Login.csv", numLinesToSkip = 1, delimiter = ';')
+	public void testLogin_UsuarioLogadoComDadosValidos(String nomeTest, String email, String password, String nomeUsuario, String resultado) {
+		//Clicar no botão Sign In na home page
+		loginpage = homePage.clicarBotaoSignIn();
+				
+		//Preencher usuario e senha
+		loginpage.preencherEmail(email);
+		loginpage.preencherPassword(password);
+		//Clicar no botao Sign In para logar
+		loginpage.clicarBotaoSignIn();
+				
+		boolean esperado_loginOK;
+		if(resultado.equals("positivo"))
+				esperado_loginOK = true;
+		else 
+				esperado_loginOK = false;
+				
+		//Validar se o usuario está logado
+		assertThat(homePage.estaLogado(nomeUsuario), is(esperado_loginOK));
+		
+		capturarTela(nomeTest, resultado);
+				
+		if(esperado_loginOK)
+				homePage.clicarBotaoSignOut();
+				
+		carregarPaginaInicial();
+				
 	}
 	
 	ModalProdutoPage modalProdutoPage;

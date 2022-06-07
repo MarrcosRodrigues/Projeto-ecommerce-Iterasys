@@ -1,0 +1,3 @@
+nomeTest;email;password;nomeUsuario;resultado
+loginValido;m4rcostestes@gmail.com;teste;Marcos Rodrigues;positivo
+loginInvalido;m4rcostestes@gmail.com;teste123;Marcos Rodrigues;negativo
