@@ -23,11 +23,8 @@ public class CheckoutPage {
 	
 	private By checkboxIAgree = By.id("conditions_to_approve[terms-and-conditions]");
 	
-<<<<<<< HEAD
 	private By botaoConfirmaPedido = By.cssSelector("#payment-confirmation button");
 	
-=======
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 	public CheckoutPage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -67,12 +64,9 @@ public class CheckoutPage {
 	public boolean estaSelecionadoCheckboxIAgree() {
 		return driver.findElement(checkboxIAgree).isSelected();
 	}
-<<<<<<< HEAD
 	
 	public PedidoPage clicarBotaoConfirmaPedido() {
 		driver.findElement(botaoConfirmaPedido).click();
 		return new PedidoPage(driver);
 	}
-=======
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 }

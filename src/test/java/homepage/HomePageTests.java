@@ -13,10 +13,7 @@ import pages.CarrinhoPage;
 import pages.CheckoutPage;
 import pages.LoginPage;
 import pages.ModalProdutoPage;
-<<<<<<< HEAD
 import pages.PedidoPage;
-=======
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 import pages.ProdutoPage;
 import util.Funcoes;
 
@@ -62,27 +59,16 @@ public class HomePageTests extends BaseTests{
 	LoginPage loginpage;
 	@Test
 	public void testLoginComSucesso_UsuarioLogado() {
-<<<<<<< HEAD
-		//Clicar no botao Sign In na home page
-=======
 		//Clicar no botão Sign In na home page
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 		loginpage = homePage.clicarBotaoSignIn();
 		
 		//Preencher usuario e senha
 		loginpage.preencherEmail("m4rcostestes@gmail.com");
 		loginpage.preencherPassword("teste");
-<<<<<<< HEAD
 		//Clicar no botao Sign In para logar
 		loginpage.clicarBotaoSignIn();
 		
-		//Validar se o usuario esta logado
-=======
-		//Clicar no botão Sign In para logar
-		loginpage.clicarBotaoSignIn();
-		
 		//Validar se o usuario está logado
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 		assertThat(homePage.estaLogado("Marcos Rodrigues"), is(true));
 		
 		carregarPaginaInicial();
@@ -97,13 +83,8 @@ public class HomePageTests extends BaseTests{
 		String tamanhoProduto = "M";
 		String corProduto = "Black";
 		int quantidadeProduto = 2;
-<<<<<<< HEAD
-		//--Pre-condicao
-		//usuï¿½rio logado
-=======
 		//--Pré-condição
 		//usuário logado
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 		if(!homePage.estaLogado("Marcos Rodrigues")) {
 			testLoginComSucesso_UsuarioLogado();
 		}
@@ -131,11 +112,7 @@ public class HomePageTests extends BaseTests{
 		//Adicionar ao carrinho
 		modalProdutoPage = produtoPage.clicarBotaoAddToCart();
 		
-<<<<<<< HEAD
-		//Validaï¿½ï¿½es
-=======
 		//Validações
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 		assertTrue(modalProdutoPage.obterMensagemProdutoAdicionado().endsWith("Product successfully added to your shopping cart"));
 		
 		System.out.println(modalProdutoPage.obterDescricaoProduto());
@@ -181,11 +158,7 @@ public class HomePageTests extends BaseTests{
 	CarrinhoPage carrinhoPage;
 	@Test
 	public void IrParaCarrinho_InformacoesPersistidas() {
-<<<<<<< HEAD
-		//--Prï¿½-Condicoes
-=======
 		//--Pré-Condicões
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 		//Produto incluido na tela ModalProdutoPage
 		incluirProdutoNoCarrinho_ProdutoIncluidoComSucesso();
 		
@@ -212,11 +185,7 @@ public class HomePageTests extends BaseTests{
 		System.out.println(Funcoes.removeCifraoDevolveDouble(carrinhoPage.obter_totalTaxInclTotal()));
 		System.out.println(Funcoes.removeCifraoDevolveDouble(carrinhoPage.obter_taxesTotal()));
 		
-<<<<<<< HEAD
-		//Assercoes Hamcrest
-=======
 		//Asserções Hamcrest
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 		assertThat(carrinhoPage.obter_nomeProduto(), is(esperado_nomeProduto));
 		assertThat(Funcoes.removeCifraoDevolveDouble(carrinhoPage.obter_precoProduto()), is(esperado_precoProduto));
 		assertThat(carrinhoPage.obter_tamanhoProduto(), is(esperado_tamanhoProduto));
@@ -231,11 +200,7 @@ public class HomePageTests extends BaseTests{
 		assertThat(Funcoes.removeCifraoDevolveDouble(carrinhoPage.obter_totalTaxInclTotal()), is(esperado_totalTaxInclTotal));
 		assertThat(Funcoes.removeCifraoDevolveDouble(carrinhoPage.obter_taxesTotal()), is(esperado_taxesTotal));
 		
-<<<<<<< HEAD
-		//Assercao JUnit
-=======
 		//Asserção JUnit
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 		/*
 		assertEquals(esperado_nomeProduto, carrinhoPage.obter_nomeProduto());
 		assertEquals(esperado_precoProduto, Funcoes.removeCifraoDevolveDouble(carrinhoPage.obter_precoProduto()));
@@ -257,32 +222,18 @@ public class HomePageTests extends BaseTests{
 	
 	@Test
 	public void IrParaCheckout_FreteMeioPagamentoEnderecoListadosOk() {
-<<<<<<< HEAD
-		//Pre-condicoes
-=======
 		//Pré-condições
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 		
 		//Produto disponivel no carrinho de compras
 		IrParaCarrinho_InformacoesPersistidas();
 		
 		//Teste
 		
-<<<<<<< HEAD
 		//Clicar no botao
 		checkoutPage = carrinhoPage.clicarBotaoProceedToCheckout();
 		
 		//Preencher informacoes
-		
-		//Validar informacoes na tela
-=======
-		//Clicar no botão
-		checkoutPage = carrinhoPage.clicarBotaoProceedToCheckout();
-		
-		//Preencher informações
-		
 		//Validar informações na tela
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 		assertThat(Funcoes.removeCifraoDevolveDouble(checkoutPage.obter_totalTaxInclTotal()), is(esperado_totalTaxInclTotal));
 		//assertThat(checkoutPage.obter_nomeCliente(), is(esperado_nomeCliente));
 		assertTrue(checkoutPage.obter_nomeCliente().startsWith(esperado_nomeCliente));
@@ -297,11 +248,7 @@ public class HomePageTests extends BaseTests{
 		
 		checkoutPage.clicarBotaoContinueShipping();
 		
-<<<<<<< HEAD
-		//Selecionar opcao "Pay by Check"
-=======
 		//Selecionar opção "Pay by Check"
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 		checkoutPage.SelecionarRadioPayByCheck();
 		//Validar valor do cheque (amount)
 		String encontrado_amountPayByCheck = checkoutPage.obter_amountPayByCheck();
@@ -309,7 +256,6 @@ public class HomePageTests extends BaseTests{
 		Double encontrado_amountPayByCheckDouble = Funcoes.removeCifraoDevolveDouble(encontrado_amountPayByCheck);
 		
 		assertThat(encontrado_amountPayByCheckDouble, is(esperado_totalTaxInclTotal));
-<<<<<<< HEAD
 		//Clicar na opcao "I agree"
 		checkoutPage.selecionarCheckboxIAgree();
 		assertTrue(checkoutPage.estaSelecionadoCheckboxIAgree());
@@ -334,12 +280,6 @@ public class HomePageTests extends BaseTests{
 		assertThat(pedidoPage.obterTotalProdutos(), is(esperado_subtotalProduto));
 		assertThat(pedidoPage.obterTotalTaxInc(), is(esperado_totalTaxInclTotal));
 		assertThat(pedidoPage.obterMetodoPagamento(), is("check"));
-	}
 	
-=======
-		//Clicar na opção "I agree"
-		checkoutPage.selecionarCheckboxIAgree();
-		assertTrue(checkoutPage.estaSelecionadoCheckboxIAgree());
 	}
->>>>>>> f530d5c9d2c5f0de0fd743868fdf8a78f403a6b1
 }
