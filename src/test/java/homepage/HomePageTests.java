@@ -78,7 +78,7 @@ public class HomePageTests extends BaseTests{
 	ModalProdutoPage modalProdutoPage;
 	
 	@Test
-	public void incluirProdutoNoCarrinho_ProdutoIncluidoComSucesso() {
+	public void testIncluirProdutoNoCarrinho_ProdutoIncluidoComSucesso() {
 		
 		String tamanhoProduto = "M";
 		String corProduto = "Black";
@@ -157,10 +157,10 @@ public class HomePageTests extends BaseTests{
 	
 	CarrinhoPage carrinhoPage;
 	@Test
-	public void IrParaCarrinho_InformacoesPersistidas() {
+	public void testIrParaCarrinho_InformacoesPersistidas() {
 		//--Pré-Condicões
 		//Produto incluido na tela ModalProdutoPage
-		incluirProdutoNoCarrinho_ProdutoIncluidoComSucesso();
+		testIncluirProdutoNoCarrinho_ProdutoIncluidoComSucesso();
 		
 		carrinhoPage = modalProdutoPage.clicarBotaoProceedToCheckout();
 		
@@ -221,11 +221,11 @@ public class HomePageTests extends BaseTests{
 	CheckoutPage checkoutPage;
 	
 	@Test
-	public void IrParaCheckout_FreteMeioPagamentoEnderecoListadosOk() {
+	public void testIrParaCheckout_FreteMeioPagamentoEnderecoListadosOk() {
 		//Pré-condições
 		
 		//Produto disponivel no carrinho de compras
-		IrParaCarrinho_InformacoesPersistidas();
+		testIrParaCarrinho_InformacoesPersistidas();
 		
 		//Teste
 		
@@ -263,10 +263,10 @@ public class HomePageTests extends BaseTests{
 	
 	PedidoPage pedidoPage;
 	@Test
-	public void finalizarPedido_pedidoFinalizadoComSucesso() {
+	public void testFinalizarPedido_pedidoFinalizadoComSucesso() {
 		//Pre-Condicoes
 		//Checkout completamente concluido
-		IrParaCheckout_FreteMeioPagamentoEnderecoListadosOk();
+		testIrParaCheckout_FreteMeioPagamentoEnderecoListadosOk();
 		
 		//Teste
 		//Clicar no botao para confirmar o pedido
