@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = "src\\test\\resources\\features\\comprar_produto.feature",
 		glue = "steps",
 		tags = "@fluxopadrao",
-		plugin = "pretty",
+		plugin = {"pretty"},
 		monochrome = true
 		
 		)
